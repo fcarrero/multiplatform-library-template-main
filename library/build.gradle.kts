@@ -41,3 +41,13 @@ android {
     buildFeatures { compose = true }
     // IMPORTANTE: NO uses composeOptions { kotlinCompilerExtensionVersion = ... } con Kotlin 2.0+
 }
+group = "com.github.fcarrero"
+version = "1.0.0"
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+}
