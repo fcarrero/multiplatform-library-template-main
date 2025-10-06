@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.compose")                 // runtime/libs de Compose MPP
     id("org.jetbrains.kotlin.plugin.compose")   // 👈 Compose Compiler (Kotlin 2.0+)
     alias(libs.plugins.vanniktech.mavenPublish)
+    id 'maven-publish'
 }
 
 kotlin {
@@ -44,10 +45,3 @@ android {
 group = "com.github.fcarrero"
 version = "1.0.0"
 
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"])
-        }
-    }
-}
